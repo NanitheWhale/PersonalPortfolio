@@ -1,0 +1,17 @@
+:root {
+    --main-blue: 
+}
+#navbar {
+    display:flex;
+    justify-content: flex-end;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+li{
+    background-color: pink;
+}
+
