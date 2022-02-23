@@ -1,17 +1,128 @@
 :root {
-    --main-blue: 
+    --main-green: #a1ffa1; 
+    --main-pink: #ff00c3;
 }
+*{
+    margin: 0; 
+    padding: 0; 
+}
+
+a {
+    text-decoration: none; 
+    
+}
+
 #navbar {
-    display:flex;
+    display: flex; 
     justify-content: flex-end;
+    background-color: var(--main-green);
+    position: fixed; 
+    width: 100%;
+    
 }
 
-ul{
+.nav-list a {
+    display: block; 
+    padding: 1.5rem; 
+    color: var(--main-pink); 
+    font-size: xx-large;
+}
+
+.nav-list a:hover{
+    background-color: rgb(0, 255, 179); 
+    padding: 1.5rem; 
+}
+
+#welcome-section {
+    background-color: pink; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+h1 {
+    font-size: 56px; 
+}
+
+h2 {
+    font-size: 50px; 
+    padding: 4rem;
+    
+}
+
+ul {
     display: flex;
-    list-style-type: none;
+    list-style-type: none; 
 }
 
-li{
-    background-color: pink;
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    background-color: rgb(255, 112, 184);
 }
 
+.project-tiles {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+#contact {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: rgb(0, 255, 179);
+}
+
+.contact-links {
+    display: flex; 
+    
+}
+
+.contact-links a {
+    display: block; 
+    padding: 2rem 3rem;
+    font-size: xx-large;
+}
+
+
+footer {
+    padding: 3rem; 
+    text-align: center; 
+    background-color: rgb(0, 255, 115);
+}
+
+figure {
+    margin: 2rem; 
+}
+
+figcaption {
+    background-color: rgb(255, 0, 255);
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+.contact-details {
+    transition: transform 0.3s ease-out; 
+}
+
+.contact-details:hover {
+    transform: translateY(8px);
+}
+
+@media (max-width: 75em) {
+    html {
+        font-size: 80%; 
+    }
+}
+
+@media (max-width: 75em) {
+    html {
+        font-size: 70%;
+        color: blue;  
+    }
+}
