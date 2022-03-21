@@ -2,8 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: rgb(255, 231, 97); 
 }
 
 h1 {
-    color: rgb(255, 0, 106);
+    color: rgb(94, 32, 119);
+    font-style: italic; 
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+figure {
+    margin: 2rem;  
+    text-align: center; 
+    font-size: x-large; 
+    font-style: italic;
+    font-weight: 700; 
+    color:rgb(94, 32, 119);
 }

@@ -39,7 +39,7 @@ export const people = [
         skin_color: 'gold',
         eye_color: 'yellow',
         birth_year: '112BBY',
-        gender: 'n/a',
+        gender: 'other',
         homeworld: 'https://swapi.co/api/planets/1/',
         films: [
             'https://swapi.co/api/films/2/',
@@ -66,7 +66,7 @@ export const people = [
         skin_color: 'white, blue',
         eye_color: 'red',
         birth_year: '33BBY',
-        gender: 'n/a',
+        gender: 'other',
         homeworld: 'https://swapi.co/api/planets/8/',
         films: [
             'https://swapi.co/api/films/2/',
@@ -197,7 +197,7 @@ export const people = [
         skin_color: 'white, red',
         eye_color: 'red',
         birth_year: 'unknown',
-        gender: 'n/a',
+        gender: 'other',
         homeworld: 'https://swapi.co/api/planets/1/',
         films: [
             'https://swapi.co/api/films/1/'
@@ -413,7 +413,7 @@ export const people = [
         skin_color: 'green-tan, brown',
         eye_color: 'orange',
         birth_year: '600BBY',
-        gender: 'hermaphrodite',
+        gender: 'other',
         homeworld: 'https://swapi.co/api/planets/24/',
         films: [
             'https://swapi.co/api/films/4/',
@@ -567,7 +567,7 @@ export const people = [
         skin_color: 'metal',
         eye_color: 'red',
         birth_year: '15BBY',
-        gender: 'none',
+        gender: 'other',
         homeworld: 'https://swapi.co/api/planets/28/',
         films: [
             'https://swapi.co/api/films/2/'
@@ -2002,7 +2002,7 @@ export const people = [
         skin_color: 'none',
         eye_color: 'black',
         birth_year: 'unknown',
-        gender: 'none',
+        gender: 'other',
         homeworld: 'https://swapi.co/api/planets/28/',
         films: [
             'https://swapi.co/api/films/7/'

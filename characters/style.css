@@ -1,5 +1,13 @@
 * {
-    margin:
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(93, 120, 150);
+}
+
+header {
+    display: flex; 
+    flex-wrap: wrap; 
 }
 
 main {
@@ -9,8 +17,25 @@ main {
 
 figure {
     margin: .5rem; 
+    text-align: center; 
+    font-size: x-large;
+    color:rgb(11, 0, 71);
+    font-style: italic;
 }
 
 figure img {
     max-height: 20rem;  
+}
+
+button {
+    width: 10rem; 
+    height: 3rem; 
+    margin: 2rem; 
+    background-color: gold;
+    color: rgb(66, 21, 0);
+    font-size: large;
+    font-weight: 700;
+    border-width: 5px;
+    border-color: rgb(17, 112, 255); 
+    border-style: ridge;
 }
