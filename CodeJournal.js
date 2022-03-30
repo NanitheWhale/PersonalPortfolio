@@ -78,3 +78,61 @@ function myFunction() { // this is a named function definition
 function sumTwoThings(thingOne, thingTwo) {
     return thingOne + thingTwo;
 }
+
+// Filter method example, filter returns an array  of all elements that 'pass the test'
+
+const pilots = [
+    {
+        id: 2,
+        name: "wedge Antiles",
+        faction: "Rebels"
+    },
+    {
+        Id: 8,
+        name: "clena Ree",
+        faction: "Empire"
+    },
+    {
+        id: 40,
+        name: "Iden Versio",
+        faction: "Empire"
+    },
+    {
+        id: 66,
+        name: "Thane Kyrell",
+        faction: "Rebels"
+    }
+];
+
+const rebels = pilots.filter(pilot => pilot.faction === "Rebels") 
+
+const empire = pilots.filter((pilot) => {
+    return pilot.faction === 'Empire'
+})
+
+// Array helper method 'map' example
+
+let filmURLs = [
+    "https://swapi.co/api/films/",
+    "https://swapi.co/api/films/5/",
+    "https://swapi.co/api/films/4/this one is longer... even longer",
+    "https://swapi.co/api/films/6/",
+    "https: ",
+    "https://swapi.co/api/films/1/"
+]
+
+const filmLengths = filmURLs.map(filmURL => filmURL.length)
+
+const filmPlusMore = filmURLs.map(filmURL => {
+    let filmObj = {
+        url: filmURL,
+        createdDate: Date.now()
+    }
+    return filmObj
+})
+
+const pilotNames = pilots.map(pilot => pilot.name) // new array just contains pilot names
+
+// Ternary operator system: condition 7 exprIfTrue : exprIfFalse
+
+ 
