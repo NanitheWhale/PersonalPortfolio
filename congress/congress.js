@@ -3,6 +3,9 @@ import { representatives } from '../data/representatives.js'
 
 const allCongressMembers = [...senators, ...representatives]// modern way to combine arrays.. like a genius
 
+const header = document.querySelector('header')
+const main = document.querySelector('main')
+
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
