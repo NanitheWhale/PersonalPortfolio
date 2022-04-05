@@ -1,11 +1,7 @@
-* {
-margin: 0;
-padding: 0;
-box-sizing: 0;
-}
-
 header {
     color:rgb(119, 194, 255);
+    font-size: xx-large;
+    text-align: center; 
 }
 
 body {
@@ -14,6 +10,16 @@ body {
 
 .mainContainer {
     display: flex; 
+}
+
+.shipViewer {
+    display: flex; 
+    justify-content: center;
+    height: 100vh; 
+}
+
+.shipViewer img {
+    padding: 1em;
 }
 
 .box{

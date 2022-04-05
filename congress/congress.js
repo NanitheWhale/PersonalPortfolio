@@ -1,4 +1,7 @@
 import { senators } from '../data/senators.js'
+import { representatives } from '../data/representatives.js'
+
+const allCongressMembers = [...senators, ...representatives]// modern way to combine arrays.. like a genius
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
@@ -44,7 +47,7 @@ const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator  
 })
 
-seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name}`
+seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
 
 simplifiedSenators().forEach(senator => {
     if(senator.loyaltyPct === 100) {
@@ -53,3 +56,16 @@ simplifiedSenators().forEach(senator => {
         loyaltyList.appendChild(listItem)
     }
 })
+
+// Todo some sort of UI for sorting by party affiliation by party and gender with a count 
+// TODO much better styling of grid of senators and their names. 
+// Maybe include more data with each congress member such as links to their twitter or facebook
+// incorporate a way to select the members of the house of representatives
+
+const biggestMissedVotesPct = simplifiedSenators().reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
+
+console.log(biggestMissedVotesPct.missedVotesPct)
+
+const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct).map(senator => senator.name).join(' and ')
+
+console.log(biggestVacationerList)
