@@ -10,6 +10,15 @@ const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
 
+const allSenatorsButton = document.createElement('button')
+allSenatorsButton.textContent = 'All Senators'
+allSenatorsButton.addEventListener('click', function () {
+    populateDOM(senators)
+})
+
+header.appendChild(allSenatorsButton)
+
+
 function simplifiedSenators() {
     return senators.map(senator => {
         const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
@@ -22,10 +31,10 @@ function simplifiedSenators() {
             seniority: +senator.seniority,
             missedVotesPct: senator.missed_votes_pct,
             loyaltyPct: senator.votes_with_party_pct
+            
         }
     })
 }
-
 const simpleSenators = simplifiedSenators()
 
 function populateSenatorDiv(senatorArray) {

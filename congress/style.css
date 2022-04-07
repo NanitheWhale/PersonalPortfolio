@@ -33,3 +33,17 @@ body img:hover {
 main img {
     border-radius: 4px solid black;
 }
+
+button {
+    background-color: rgb(139, 101, 72);
+    width: 10rem; 
+    height: 3rem; 
+    margin: 2rem; 
+    background-color: rgb(126, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: large;
+    font-weight: 700;
+    border-width: 5px;
+    border-color: rgb(107, 27, 0); 
+    border-style: ridge;
+}
