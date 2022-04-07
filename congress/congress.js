@@ -6,14 +6,6 @@ const allCongressMembers = [...senators, ...representatives]// modern way to com
 const header = document.querySelector('header')
 const main = document.querySelector('main')
 
-const allCharsButton = document.createElement('button')
-allCharsButton.textContent = 'All Characters'
-allCharsButton.addEventListener('click', function () {
-    populateDOM(people)
-})
-
-header.appendChild(allCharsButton)
-
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')

@@ -5,7 +5,7 @@ const header = document.querySelector('header')
 const main = document.querySelector('main')
 
 const allCharsButton = document.createElement('button')
-allCharsButton.textContent = 'Members of Congress'
+allCharsButton.textContent = 'All Characters'
 allCharsButton.addEventListener('click', function () {
     populateDOM(people)
 })
