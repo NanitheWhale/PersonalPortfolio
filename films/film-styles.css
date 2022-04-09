@@ -23,3 +23,7 @@ figure {
     font-weight: 700; 
     color:rgb(94, 32, 119);
 }
+
+figure img:hover {
+    box-shadow: 1px 1px 40px rgb(63, 0, 43);
+}

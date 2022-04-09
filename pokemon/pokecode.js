@@ -8,7 +8,7 @@ const getAPIData = async (url) => {
 }
 
 async function loadPokemon() {
-    const pokeData = await getAPIData(`https://pokeapi.co/api/v2/pokemon/snorlax`) 
+    const pokeData = await getAPIData(`https://pokeapi.co/api/v2/pokemon/mudsdale`) 
 populatePokeGrid(pokeData)
 }
 
@@ -36,9 +36,9 @@ function populateCardFront(pokemon) {
 const pokeFront = document.createElement('figure')
 pokeFront.className = 'cardFace'
 const pokeImg = document.createElement('img')
-pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png`
+pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/750.png`
 const pokeCaption = document.createElement('figcaption')
-pokeCaption.textContent = 'snorlax'
+pokeCaption.textContent = 'mudsdale'
 
 pokeFront.appendChild(pokeImg)
 pokeFront.appendChild(pokeCaption)

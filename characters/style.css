@@ -27,6 +27,12 @@ figure img {
     max-height: 20rem;  
 }
 
+figure img:hover {
+    
+box-shadow: 1px 1px 20px rgb(30, 0, 255);
+}
+
+
 button {
     width: 10rem; 
     height: 3rem; 
@@ -38,4 +44,8 @@ button {
     border-width: 5px;
     border-color: rgb(17, 112, 255); 
     border-style: ridge;
+}
+
+button:hover {
+    box-shadow: 1px 1px 20px rgb(30, 0, 255);
 }
