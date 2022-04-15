@@ -40,7 +40,7 @@ function populateShipView(shipData) {
     console.log('We got an error!')
     shipImage.hidden = true
     modal.classList.toggle('is-active')
-    shipMessage.textContent = `The ship known as "${shipData.name}" is in space port for repairs.`
+    shipMessage.textContent = `The "${shipData.name}" is not the ship we are looking for.`
     })
 
     shipViewer.appendChild(shipImage)

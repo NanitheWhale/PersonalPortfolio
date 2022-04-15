@@ -23,7 +23,8 @@ body {
 }
 
 .box{
-    background-color: rgb(170, 229, 255);
+    background-image: linear-gradient(to right, rgb(9, 0, 129), rgb(255, 72, 6), rgb(9, 0, 129)); 
+    font-style: italic;
     font-size: xx-large;
     text-align: center; 
 }

@@ -1,6 +1,7 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 
+
 const allCongressMembers = [...senators, ...representatives]// modern way to combine arrays.. like a genius
 
 const header = document.querySelector('header')
@@ -9,14 +10,6 @@ const main = document.querySelector('main')
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
-
-const allSenatorsButton = document.createElement('button')
-allSenatorsButton.textContent = 'All Senators'
-allSenatorsButton.addEventListener('click', function () {
-    populateDOM(senators)
-})
-
-header.appendChild(allSenatorsButton)
 
 
 function simplifiedSenators() {
@@ -52,7 +45,6 @@ function populateSenatorDiv(senatorArray) {
     senatorDiv.appendChild(senFigure)
 })
 }
-
 
 
 populateSenatorDiv(simpleSenators)
