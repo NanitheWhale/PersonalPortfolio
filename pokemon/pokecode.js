@@ -10,6 +10,7 @@ const getAPIData = async (url) => {
 async function loadPokemon(offset = 0, limit = 25) {
     const pokeData = await getAPIData(
         `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+        
     )
     for (const nameAndUrl of pokeData.results) {
         const pokemon = await getAPIData(nameAndUrl.url)
@@ -61,6 +62,7 @@ function makeAbilitiesArray(commaString) {
 
 function makeTypesArray(spacedString) {
     return spacedString.split(' ').map((typeName) => {
+        `https://pokeapi.co/api/v2/type/${id}`
         return {
             ability: { name: typeName}
         }
@@ -117,5 +119,8 @@ function populateCardBack(pokemon) {
     pokeBack.appendChild(abilityList)
     return pokeBack
 }
+
+
+
 
 loadPokemon(0, 25)
