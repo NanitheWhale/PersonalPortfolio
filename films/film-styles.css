@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(255, 231, 97); 
+    background-image: linear-gradient(to right, rgb(255, 225, 100), rgb(255, 177, 149), rgb(253, 255, 100)); 
 }
 
 h1 {
-    color: rgb(94, 32, 119);
+    color: rgb(255, 0, 0);
     font-style: italic; 
 }
 
@@ -21,7 +21,7 @@ figure {
     font-size: x-large; 
     font-style: italic;
     font-weight: 700; 
-    color:rgb(94, 32, 119);
+    color:rgb(255, 0, 0);
 }
 
 figure img:hover {

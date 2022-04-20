@@ -1,6 +1,8 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 
+// make a link connecting the congress index.html and the representatives index.html and figure out how to make each profile clickable.
+
 
 const allCongressMembers = [...senators, ...representatives]// modern way to combine arrays.. like a genius
 
@@ -11,6 +13,20 @@ const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
 
+const allSenatorsButton = document.createElement('button')
+allSenatorsButton.textContent = 'All Senators'
+allSenatorsButton.addEventListener('click', function () {
+    populateDOM(people)
+})
+
+const allRepsButton = document.createElement('button')
+allRepsButton.textContent = 'All Representatives'
+allRepsButton.addEventListener('click', function () {
+    populateDOM(people)
+})
+
+header.appendChild(allSenatorsButton)
+header.appendChild(allRepsButton)
 
 function simplifiedSenators() {
     return senators.map(senator => {
