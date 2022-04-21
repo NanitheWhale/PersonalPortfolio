@@ -3,10 +3,111 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color:rgb(187, 255, 187)
+}
+
+header {
+    font-size: 35px; 
+    text-align: center; 
+    background-color: rgb(255, 255, 100);
+}
+
+table {
+    font-size: 20px; 
+    font-weight: 700; 
+}
+
+table tr:nth-child(1) {
+    background-color: #ededed;
+}
+
+table tr:nth-child(2) {
+    background-color: #FF6130;
+}
+
+table tr:nth-child(3) {
+    background-color: #00E5FF;
+}
+
+table tr:nth-child(4) {
+    background-color: #309130;
+}
+
+table tr:nth-child(5) {
+    background-color: #FF638F;
+}
+
+table tr:nth-child(6) {
+    background-color: #A86839;
+}
+
+table tr:nth-child(7) {
+    background-color: #00FF8d;
+}
+
+table tr:nth-child(8) {
+    background-color: #4B4469;
+    color: white;
+}
+
+table tr:nth-child(9) {
+    background-color: #608FA6;
+}
+
+table tr:nth-child(10) {
+    background-color: #5183FF;
+}
+
+table tr:nth-child(11) {
+    background-color: #8941FF;
+}
+
+table tr:nth-child(12) {
+    background-color: #FFFF00; 
+}
+
+table tr:nth-child(13) {
+    background-color: #0000FF;
+    color: white; 
+}
+
+table tr:nth-child(14) {
+    background-color: #B19BBD;
+}
+
+table tr:nth-child(15) {
+    background-color: #C3FFFF;
+}
+
+table tr:nth-child(16) {
+    background-color: #F5F5DC;
+}
+
+table tr:nth-child(17) {
+    background-color: #FFCBFF;
+}
+
+table tr:nth-child(18) {
+    background-color: #FF0000;
+}
+
+table tr:nth-child(19) {
+    background-color: #B3B3B3;
+}
+
+button {
+    background-color: rgb(255, 62, 62);
+    width: 10rem; 
+    height: 3rem; 
+    margin: 2rem; 
+    font-size: 18px; 
+    font-weight: 600;
+}
+
 .pokeGrid {
     display: flex; 
     flex-wrap: wrap; 
-    background-color:rgb(187, 255, 187);
 }
 
 .scene {
@@ -34,17 +135,21 @@ position: relative;
 }
 
 .card.is-flipped {
-    transform: rotateY(180deg);
+    transform: rotate3d(1, -1, 0, 180deg);
 }
 
 .front {
     background-color: rgb(255, 255, 98);
+    font-size: 30px; 
 }
 
 .back {
     background: rgb(85, 255, 85); 
-    transform: rotateY(180deg);
+    transform: rotate3d(1, -1, 0, 180deg);
+    font-size: 20px; 
 }
+
+
 
 figure img {
     width: 200px;

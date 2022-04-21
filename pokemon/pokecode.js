@@ -9,7 +9,7 @@ const getAPIData = async (url) => {
 
 const loadedPokemon = []
 
-async function loadPokemon(offset = 0, limit = 25) {
+async function loadPokemon(offset = 0, limit = 400) {
     const pokeData = await getAPIData(
         `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
     )
@@ -28,6 +28,7 @@ async function loadPokemon(offset = 0, limit = 25) {
         populatePokeCard(simplifiedPokemon)
     }
 }
+
 
 class Pokemon {
     constructor(name, height, weight, abilities, types) {
@@ -54,6 +55,7 @@ newButton.addEventListener('click', () => {
     const pokeTypes = prompt(
         "What are your Pokemon's types? (up to 2 types separated by a space)",
         )
+        
 
     const newPokemon = new Pokemon(
         pokeName,
@@ -66,6 +68,7 @@ newButton.addEventListener('click', () => {
     populatePokeCard(newPokemon)
 })
 
+
 function makeAbilitiesArray(commaString) {
     return commaString.split(',').map((abilityName) => {
         return {
@@ -75,9 +78,9 @@ function makeAbilitiesArray(commaString) {
 }
 
 function makeTypesArray(spacedString) {
-    return spacedString.split(' ').map((typeName) => {
+    return spacedString.split(',').map((typeName) => {
         return {
-            ability: { name: typeName }
+            type: { name: typeName }
         }
     })
 }
@@ -125,51 +128,77 @@ function populateCardBack(pokemon) {
     const pokeBack = document.createElement('div')
     pokeBack.className = 'cardFace back'
     const label = document.createElement('h4')
-    label.textContent = 'Abilities'
+    label.textContent = 'Abilities, Berries, HP'
     pokeBack.appendChild(label)
     const abilityList = document.createElement('ul')
     pokemon.abilities.forEach((abilityItem) => {
         const listItem = document.createElement('li')
         listItem.textContent = abilityItem.ability.name
         abilityList.appendChild(listItem)
+        
     })
     pokeBack.appendChild(abilityList)
     return pokeBack
 }
+
 
 function getPokeTypeColor(pokeType) {
     let color
     //if(pokeType === "grass") color = '#00ff00'
     switch (pokeType) {
         case 'grass':
-            color = '#00FF00'
+            color = '#309130'
             break
         case 'fire':
-            color = '#FF0000'
+            color = '#FF6130'
             break
         case 'water':
-            color = '#0000FF'
+            color = '#00E5FF'
             break
         case 'bug':
-            color = '#7FFF00'
+            color = '#00FF8D'
             break
         case 'normal':
             color = '#F5F5DC'
             break
+        case 'dark':
+            color = '#4b4469'
+            break
+        case 'steel':
+            color = '#608fa6'
+            break
         case 'flying':
-            color = '#00FFFF'
+            color = '#5183FF'
             break
         case 'poison':
-            color = '#C300FF'
+            color = '#8941ff'
             break
         case 'electric':
-            color = '#C8FF00'
+            color = '#FFFF00'
+            break
+        case 'dragon':
+            color = '#0000FF'
+            break
+        case 'ghost':
+            color = '#b19bbd'
+            break
+        case 'ice':
+            color = '#c3ffff'
             break
         case 'psychic':
-            color = 'pink'
+            color = '#ff638f'
+            break
+        case 'fairy': 
+            color = '#ffcbff'
+            break
+        case 'fighting':
+            color = '#FF0000'
+            break
+        case 'rock':
+            color = '#B3B3B3'
             break
         case 'ground':
-            color = 'brown'
+            color = '#a86839'
             break
         default:
             color = '#888888'
@@ -177,7 +206,7 @@ function getPokeTypeColor(pokeType) {
     return color
 }
 
-await loadPokemon(0, 250)
+await loadPokemon(0, 400)
 
 function getPokemonByType(type) {
     return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
