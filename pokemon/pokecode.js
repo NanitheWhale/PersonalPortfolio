@@ -128,7 +128,7 @@ function populateCardBack(pokemon) {
     const pokeBack = document.createElement('div')
     pokeBack.className = 'cardFace back'
     const label = document.createElement('h4')
-    label.textContent = 'Abilities, Berries, HP'
+    label.textContent = 'Abilities, Moves, HP'
     pokeBack.appendChild(label)
     const abilityList = document.createElement('ul')
     pokemon.abilities.forEach((abilityItem) => {
@@ -212,4 +212,13 @@ function getPokemonByType(type) {
     return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
 }
 
-console.log(getPokemonByType('poison'))
+// now figure out how to display this count in the UI
+const typeSelector = document.querySelector('#type-select')
+typeSelector.addEventListener('change', (event) => {
+const userTypesChoice = event.target.value.toLowerCase()
+if(event.target.value === '--Please choose a Pokemon type--') {
+
+}
+const PokemonByType = getPokemonByType(usersTypeChoice)
+revoveChildren(pokegrid)
+})
