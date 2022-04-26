@@ -1,3 +1,5 @@
+import { removeChildren } from '../utils/index.js'
+
 const getAPIData = async (url) => {
     try {
         const result = await fetch(url)
@@ -9,7 +11,7 @@ const getAPIData = async (url) => {
 
 const loadedPokemon = []
 
-async function loadPokemon(offset = 0, limit = 400) {
+async function loadPokemon(offset = 0, limit = 550) {
     const pokeData = await getAPIData(
         `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
     )
@@ -200,13 +202,12 @@ function getPokeTypeColor(pokeType) {
         case 'ground':
             color = '#a86839'
             break
-        default:
-            color = '#888888'
+
     }
     return color
 }
 
-await loadPokemon(0, 400)
+await loadPokemon(0, 550)
 
 function getPokemonByType(type) {
     return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
@@ -215,10 +216,11 @@ function getPokemonByType(type) {
 // now figure out how to display this count in the UI
 const typeSelector = document.querySelector('#type-select')
 typeSelector.addEventListener('change', (event) => {
-const userTypesChoice = event.target.value.toLowerCase()
+const usersTypeChoice = event.target.value.toLowerCase()
 if(event.target.value === '--Please choose a Pokemon type--') {
-
+    console.log('Show them all')
 }
-const PokemonByType = getPokemonByType(usersTypeChoice)
-revoveChildren(pokegrid)
-})
+const pokemonByType = getPokemonByType(usersTypeChoice)
+removeChildren(pokeGrid)
+pokemonByType.forEach((eachSinglePokemon) => populatePokeCard(eachSinglePokemon))
+}) 
