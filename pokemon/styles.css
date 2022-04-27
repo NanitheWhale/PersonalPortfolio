@@ -16,6 +16,7 @@ header {
 table {
     font-size: 20px; 
     font-weight: 700; 
+    
 }
 
 table tr:nth-child(1) {
@@ -94,6 +95,13 @@ table tr:nth-child(18) {
 
 table tr:nth-child(19) {
     background-color: #B3B3B3;
+}
+
+select {
+    background-color: #55ffda;
+    height: 3rem; 
+    font-size: 1rem;
+    text-align: center; 
 }
 
 button {

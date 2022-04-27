@@ -43,9 +43,20 @@ class Pokemon {
     }
 }
 
+const header = document.querySelector('header')
+const loadButton = document.createElement('button')
+loadButton.textContent = 'Load Pokemon'
+header.appendChild(loadButton)
+loadButton.addEventListener('click', async () => {
+    if (loadedPokemon.length === 0) {
+    removeChildren(pokeGrid)
+    await loadPokemon(0, 550)
+    }
+})
+
 const newButton = document.createElement('button')
 newButton.textContent = 'New Pokemon'
-const header = document.querySelector('header')
+
 header.appendChild(newButton)
 newButton.addEventListener('click', () => {
     const pokeName = prompt('What is the name of your new Pokemon?', 'Thoremon')
@@ -207,7 +218,7 @@ function getPokeTypeColor(pokeType) {
     return color
 }
 
-await loadPokemon(0, 550)
+
 
 function getPokemonByType(type) {
     return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
@@ -216,11 +227,14 @@ function getPokemonByType(type) {
 // now figure out how to display this count in the UI
 const typeSelector = document.querySelector('#type-select')
 typeSelector.addEventListener('change', (event) => {
-const usersTypeChoice = event.target.value.toLowerCase()
-if(event.target.value === '--Please choose a Pokemon type--') {
-    console.log('Show them all')
-}
-const pokemonByType = getPokemonByType(usersTypeChoice)
 removeChildren(pokeGrid)
+const usersTypeChoice = event.target.value.toLowerCase()
+if(event.target.value === 'Show all Pokemon') {
+    loadedPokemon.forEach((singleLoadedPokemon) => 
+    populatePokeCard(singleLoadedPokemon),
+    )
+} else {
+const pokemonByType = getPokemonByType(usersTypeChoice)
 pokemonByType.forEach((eachSinglePokemon) => populatePokeCard(eachSinglePokemon))
+}
 }) 
