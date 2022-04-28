@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: linear-gradient(to right, rgb(255, 225, 100), rgb(255, 177, 149), rgb(253, 255, 100)); 
+    background-image: linear-gradient(to right, rgb(255, 225, 100), rgb(255, 87, 26), rgb(253, 255, 100)); 
 }
 
 h1 {
@@ -21,9 +21,9 @@ figure {
     font-size: x-large; 
     font-style: italic;
     font-weight: 700; 
-    color:rgb(255, 0, 0);
+    color:rgb(132, 0, 0);
 }
 
 figure img:hover {
-    box-shadow: 1px 1px 40px rgb(63, 0, 43);
+    box-shadow: 1px 1px 40px rgb(255, 0, 0);
 }

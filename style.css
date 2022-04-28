@@ -1,5 +1,5 @@
 :root {
-    --main-green: #a1ffa1; 
+    --main-green: #4effca; 
     --main-pink: #ff00c3;
 }
 *{
@@ -29,7 +29,7 @@ a {
 }
 
 .nav-list a:hover{
-    background-color: rgb(0, 255, 179); 
+    background-color: rgb(73, 234, 255); 
     padding: 1.5rem; 
 }
 
@@ -40,7 +40,9 @@ a {
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
+
 }
+
 
 h1 {
     font-size: 56px; 
@@ -62,6 +64,7 @@ ul {
     flex-direction: column;
     align-items: center;  
     background-color: rgb(255, 112, 184);
+    color: white; 
 }
 
 .project-tiles {
@@ -92,11 +95,12 @@ ul {
 footer {
     padding: 3rem; 
     text-align: center; 
-    background-color: rgb(0, 255, 115);
+    background-color: rgb(0, 255, 179);
 }
 
 figure {
     margin: 2rem; 
+    color: black; 
 }
 
 figure img {
@@ -105,17 +109,17 @@ figure img {
 }
 
 figure img:hover {
-    box-shadow: 1px 1px 30px rgb(39, 0, 54);
+    box-shadow: 1px 1px 30px rgb(255, 255, 255);
 }
 
 figcaption {
-    background-color: rgb(255, 0, 255);
+    background-color: rgb(215, 140, 255);
     text-align: center;
     font-size: x-large;
 }
 
 figcaption:hover {
-    background-color: rgb(0, 255, 179);
+    background-color: rgb(0, 229, 255);
 }
 
 .contact-details {
