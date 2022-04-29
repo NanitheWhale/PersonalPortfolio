@@ -1,6 +1,7 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 
+
 // make a link connecting the congress index.html and the representatives index.html and figure out how to make each profile clickable.
 
 
@@ -10,6 +11,7 @@ const header = document.querySelector('header')
 const main = document.querySelector('main')
 
 const senatorDiv = document.querySelector('.senatorsDiv')
+const repsDiv = document.querySelector('representativesDiv')
 const seniorityHeading = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
 
@@ -46,6 +48,40 @@ function simplifiedSenators() {
 }
 const simpleSenators = simplifiedSenators()
 
+function simplifiedRepresentatives() {
+    return representatives.map(representative => {
+        const middleName = representative.middle_name ? ` ${representative.middle_name} ` : ` `
+        return {
+            id: representative.id,
+            name: `${representative.first_name}${middleName}${representative.last_name}`,
+            party: representative.party,
+            gender: representative.gender,
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${representative.govtrack_id}-200px.jpeg`,
+            seniority: +representative.seniority,
+            missedVotesPct: representative.missed_votes_pct,
+            loyaltyPct: representative.votes_with_party_pct,
+
+        }
+    })
+}
+const simpleRepresentatives = simplifiedRepresentatives()
+
+function populateRepDiv(representativesArray) {
+    representativesArray.forEach((representative) => {
+        const repFigure = document.createElement('figure')
+        const figImg = document.createElement('img')
+        const figCaption = document.createElement('figCaption')
+
+        figImg.src = representative.imgURL
+        figCaption.textContent = representative.name
+
+        repFigure.appendChild(figImg)
+        repFigure.appendChild(figCaption)
+        repsDiv.appendChild(repFigure)
+    })
+}
+
+
 function populateSenatorDiv(senatorArray) {
     senatorArray.forEach(senator => {
         const senFigure = document.createElement('figure')
@@ -64,6 +100,7 @@ function populateSenatorDiv(senatorArray) {
 
 
 populateSenatorDiv(simpleSenators)
+populateRepDiv(simpleRepresentatives) 
 
 const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator  
@@ -83,6 +120,7 @@ simplifiedSenators().forEach(senator => {
 // TODO much better styling of grid of senators and their names. 
 // Maybe include more data with each congress member such as links to their twitter or facebook
 // incorporate a way to select the members of the house of representatives
+
 
 const biggestMissedVotesPct = simplifiedSenators().reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
 
