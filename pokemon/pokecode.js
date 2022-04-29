@@ -24,8 +24,10 @@ async function loadPokemon(offset = 0, limit = 550) {
             name: pokemon.name,
             types: pokemon.types,
             abilities: pokemon.abilities,
-            moves: pokemon.moves.slice(0, 3)
+            moves: pokemon.moves.slice(0, 3),
+            hp: pokemon.stats[0].base_stat
         }
+        console.log(pokemon.stats[0].base_stat)
         loadedPokemon.push(simplifiedPokemon)
         populatePokeCard(simplifiedPokemon)
     }
@@ -34,12 +36,14 @@ async function loadPokemon(offset = 0, limit = 550) {
 
 class Pokemon {
     constructor(name, height, weight, abilities, types) {
-        this.id = 9001,
-            this.name = name,
-            this.height = height,
-            this.weight = weight,
-            this.abilities = abilities,
-            this.types = types
+        ;(this.id = 9001),
+            (this.name = name),
+            (this.height = height),
+            (this.weight = weight),
+            (this.abilities = abilities),
+            (this.types = types),
+            (this.moves = moves),
+            (this.hp = hp)
     }
 }
 
@@ -90,8 +94,8 @@ function makeAbilitiesArray(commaString) {
     })
 }
 
-function makeTypesArray(spacedString) {
-    return spacedString.split(',').map((typeName) => {
+function makeTypesArray(commaString) {
+    return commaString.split(',').map((typeName) => {
         return {
             type: { name: typeName }
         }
@@ -141,7 +145,7 @@ function populateCardBack(pokemon) {
     const pokeBack = document.createElement('div')
     pokeBack.className = 'cardFace back'
     const label = document.createElement('h4')
-    label.textContent = 'Abilities, Moves, HP'
+    label.textContent = 'Abilities'
     pokeBack.appendChild(label)
     const abilityList = document.createElement('ul')
     pokemon.abilities.forEach((abilityItem) => {
@@ -151,6 +155,29 @@ function populateCardBack(pokemon) {
         
     })
     pokeBack.appendChild(abilityList)
+
+    const labelTypes = document.createElement('h4')
+    labelTypes.textContent = 'Types'
+    pokeBack.appendChild(labelTypes)
+
+    const typesList = document.createElement('ul')
+    pokemon.types.forEach((typesItem) => {
+    const listItem = document.createElement('li')
+    listItem.textContent = typesItem.type.name
+    typesList.appendChild(listItem)
+    })
+    pokeBack.appendChild(typesList)
+
+    const labelMoves = document.createElement('h4')
+    labelMoves.textContent = 'Moves'
+    pokeBack.appendChild(labelMoves)
+    const movesList = document.createElement('ul')
+    pokemon.moves.forEach((movesItem) => {
+        const listItem = document.createElement('li')
+        listItem.textContent = movesItem.move.name
+        movesList.appendChild(listItem)
+    })
+    pokeBack.appendChild(movesList)
     return pokeBack
 }
 

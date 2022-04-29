@@ -10,13 +10,16 @@ body {
 header {
     font-size: 35px; 
     text-align: center; 
-    background-color: rgb(255, 255, 100);
+    background-color: rgb(255, 255, 100);   
+}
+
+header h1 {
+    color: white; 
 }
 
 table {
     font-size: 20px; 
-    font-weight: 700; 
-    
+    font-weight: 700;
 }
 
 table tr:nth-child(1) {
@@ -149,12 +152,14 @@ position: relative;
 .front {
     background-color: rgb(255, 255, 98);
     font-size: 30px; 
+    border-radius: 8px; 
 }
 
 .back {
     background: rgb(85, 255, 85); 
     transform: rotate3d(1, -1, 0, 180deg);
     font-size: 20px; 
+    border-radius: 8px; 
 }
 
 
