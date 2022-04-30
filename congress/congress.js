@@ -2,6 +2,7 @@ import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 
 
+
 // make a link connecting the congress index.html and the representatives index.html and figure out how to make each profile clickable.
 
 
