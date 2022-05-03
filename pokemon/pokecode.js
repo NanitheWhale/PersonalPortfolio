@@ -11,7 +11,7 @@ const getAPIData = async (url) => {
 
 const loadedPokemon = []
 
-async function loadPokemon(offset = 0, limit = 550) {
+async function loadPokemon(offset = 0, limit = 500) {
     const pokeData = await getAPIData(
         `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
     )
@@ -24,10 +24,9 @@ async function loadPokemon(offset = 0, limit = 550) {
             name: pokemon.name,
             types: pokemon.types,
             abilities: pokemon.abilities,
-            moves: pokemon.moves.slice(0, 3),
+            moves: pokemon.moves.slice(0, ),
             hp: pokemon.stats[0].base_stat
         }
-        console.log(pokemon.stats[0].base_stat)
         loadedPokemon.push(simplifiedPokemon)
         populatePokeCard(simplifiedPokemon)
     }
@@ -35,15 +34,14 @@ async function loadPokemon(offset = 0, limit = 550) {
 
 
 class Pokemon {
-    constructor(name, height, weight, abilities, types) {
+    constructor(name, height, weight, abilities, types, moves) {
         ;(this.id = 9001),
             (this.name = name),
             (this.height = height),
             (this.weight = weight),
             (this.abilities = abilities),
             (this.types = types),
-            (this.moves = moves),
-            (this.hp = hp)
+            (this.moves = moves)
     }
 }
 
@@ -54,7 +52,7 @@ header.appendChild(loadButton)
 loadButton.addEventListener('click', async () => {
     if (loadedPokemon.length === 0) {
     removeChildren(pokeGrid)
-    await loadPokemon(0, 550)
+    await loadPokemon(0, 500)
     }
 })
 
@@ -70,8 +68,11 @@ newButton.addEventListener('click', () => {
         "What are your Pokemon's abilities? (use a comman-separated list)"
         )
     const pokeTypes = prompt(
-        "What are your Pokemon's types? (up to 2 types separated by a space)",
+        "What are your Pokemon's types? (up to 2 types separated by a comma)"
         )
+    const pokeMoves = prompt(
+        "what are your pokemon's moves? (up to 2 moves separated by a comma)"
+    )
         
 
     const newPokemon = new Pokemon(
@@ -80,6 +81,7 @@ newButton.addEventListener('click', () => {
         pokeWeight,
         makeAbilitiesArray(pokeAbilities),
         makeTypesArray(pokeTypes),
+        makeMovesArray(pokeMoves)
     )
     console.log(newPokemon)
     populatePokeCard(newPokemon)
@@ -98,6 +100,14 @@ function makeTypesArray(commaString) {
     return commaString.split(',').map((typeName) => {
         return {
             type: { name: typeName }
+        }
+    })
+}
+
+function makeMovesArray(commaString) {
+    return commaString.split(',').map((movesName) => {
+        return {
+            move: { name: movesName }
         }
     })
 }
@@ -159,7 +169,6 @@ function populateCardBack(pokemon) {
     const labelTypes = document.createElement('h4')
     labelTypes.textContent = 'Types'
     pokeBack.appendChild(labelTypes)
-
     const typesList = document.createElement('ul')
     pokemon.types.forEach((typesItem) => {
     const listItem = document.createElement('li')
@@ -173,9 +182,9 @@ function populateCardBack(pokemon) {
     pokeBack.appendChild(labelMoves)
     const movesList = document.createElement('ul')
     pokemon.moves.forEach((movesItem) => {
-        const listItem = document.createElement('li')
-        listItem.textContent = movesItem.move.name
-        movesList.appendChild(listItem)
+    const listItem = document.createElement('li')
+    listItem.textContent = movesItem.move.name
+    movesList.appendChild(listItem)
     })
     pokeBack.appendChild(movesList)
     return pokeBack
