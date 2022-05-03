@@ -9,6 +9,7 @@ header {
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center;
+    
 }
 
 main {
@@ -25,7 +26,7 @@ figure {
 }
 
 figure img {
-    max-height: 20rem;  
+    max-height: 20rem;
 }
 
 figure img:hover {

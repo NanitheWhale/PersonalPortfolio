@@ -2,17 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: linear-gradient(to right, rgb(255, 225, 100), rgb(255, 87, 26), rgb(253, 255, 100)); 
+
 }
 
 h1 {
     color: rgb(255, 0, 0);
     font-style: italic; 
+    background-image: linear-gradient(to right, rgb(255, 225, 100), rgb(255, 87, 26), rgb(253, 255, 100)); 
 }
 
 main {
     display: flex;
     flex-wrap: wrap; 
+    background-image: linear-gradient(to right, rgb(255, 225, 100), rgb(255, 87, 26), rgb(253, 255, 100)); 
 }
 
 figure {
@@ -22,6 +24,7 @@ figure {
     font-style: italic;
     font-weight: 700; 
     color:rgb(132, 0, 0);
+    background-color: gold;
 }
 
 figure img:hover {
