@@ -15,7 +15,7 @@ body {
 .shipViewer {
     display: flex; 
     justify-content: center;
-    height: 100vh; 
+    height: 80vh; 
 }
 
 .shipViewer img {
