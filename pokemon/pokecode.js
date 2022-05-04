@@ -24,7 +24,7 @@ async function loadPokemon(offset = 0, limit = 500) {
             name: pokemon.name,
             types: pokemon.types,
             abilities: pokemon.abilities,
-            moves: pokemon.moves.slice(0, ),
+            moves: pokemon.moves.slice(0, 3),
             hp: pokemon.stats[0].base_stat
         }
         loadedPokemon.push(simplifiedPokemon)
